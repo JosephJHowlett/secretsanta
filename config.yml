@@ -35,3 +35,6 @@ entrants:
     avoid: lisa
 
 test_recipient_email: jhowl01@gmail.com
+print_spoilers: True
+email_test: False
+wet_run: False

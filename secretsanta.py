@@ -17,14 +17,19 @@ name_list_orig = [name for name in name_list]
 def rotate_list(l, n):
     return l[n:] + l[:n]
 
-# TODO capitalize function
+send_emails = False
+# is this the real thing??
+if config['wet_run']:
+    assert ((not config['print_spoilers']) and (not config['email_test'])), (
+        'If it\'s really the wet run, you need to turn off spoilers and email_test!'
+    )
+    send_emails = True
 
-send_emails = True
-print_assignments = True
-# For test run - email all to Joey
-test_run = True
+if config['email_test']:
+    send_emails = True
+
+# TODO move plotting/mc stuff to config
 plot = False
-
 n_trials = 1
 if plot:
     n_trials = 10000
@@ -84,7 +89,7 @@ if plot:
     plt.legend(loc=4)
     plt.show()
 
-if print_assignments:
+if config['print_spoilers']:
     for assign_ind in range(len(name_list)):
             print('%s, you are %s\'s secret santa!' % (
                 name_map[assign_ind].upper(),
@@ -98,7 +103,7 @@ if send_emails:
     from email.mime.text import MIMEText
     for i, assignment in enumerate(assignments):
         daemon = 'howlett.secret.santa.backup@gmail.com'
-        if test_run:
+        if config['email_test']:
             recipient = config['test_recipient_email']
         else:
             sys.exit()
