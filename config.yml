@@ -1,0 +1,37 @@
+entrants:
+  valerie:
+    email: vhowlett@gmail.com
+
+  joey:
+    email: jhowl01@gmail.com
+    avoid: lex
+
+  lex:
+    email: lexeam3@aim.com
+    avoid: joey
+
+  natalie:
+    email: howlett.natalie@gmail.com
+    avoid: max
+
+  max:
+    email: maxchristopherpadgett@gmail.com
+    avoid: natalie
+
+  claire:
+    email: howlett.cm@gmail.com
+    avoid: sabri
+
+  sabri:
+    email: eyuboglu@stanford.edu
+    avoid: claire
+
+  lisa:
+    email: lhowlett4145@gmail.com
+    avoid: frank
+
+  frank:
+    email: frankhowett@gmail.com
+    avoid: lisa
+
+test_recipient_email: jhowl01@gmail.com
